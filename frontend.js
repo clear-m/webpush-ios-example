@@ -1,5 +1,5 @@
 async function initServiceWorker() {
-    let swRegistration = await navigator.serviceWorker.register('https://andreinwald.github.io/webpush-ios-example/serviceworker.js', {scope: '/webpush-ios-example/'})
+    let swRegistration = await navigator.serviceWorker.register('https://clear-m.github.io/webpush-ios-example/serviceworker.js', {scope: '/webpush-ios-example/'})
     let pushManager = swRegistration.pushManager;
 
     if (!isPushManagerActive(pushManager)) {
@@ -38,7 +38,7 @@ function isPushManagerActive(pushManager) {
 async function subscribeToPush() {
     // Public part of VAPID key, generation of that covered in README
     // All subscription tokens associated with that key, so if you change it - you may lose old subscribers
-    const VAPID_PUBLIC_KEY = 'BAwUJxIa7mJZMqu78Tfy2Sb1BWnYiAatFCe1cxpnM-hxNtXjAwaNKz1QKLU8IYYhjUASOFzSvSnMgC00vfsU0IM';
+    const VAPID_PUBLIC_KEY = 'BEKO8OiTXW-7KH1z4XHAVdRgCvbtsFHzS7ef7aavorIbL3GNeL92UocIxqmgOT9b7u7zlo0db0G-JXTDs8Jnc_k';
 
     let swRegistration = await navigator.serviceWorker.getRegistration();
     let pushManager = swRegistration.pushManager;
@@ -71,10 +71,10 @@ function testSend() {
     const title = "Push title";
     const options = {
         body: "Additional text with some description",
-        icon: "https://andreinwald.github.io/webpush-ios-example/images/push_icon.jpg",
+        icon: "https://clear-m.github.io/webpush-ios-example/images/push_icon.jpg",
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Orange_tabby_cat_sitting_on_fallen_leaves-Hisashi-01A.jpg/1920px-Orange_tabby_cat_sitting_on_fallen_leaves-Hisashi-01A.jpg",
         data: {
-            "url": "https://andreinwald.github.io/webpush-ios-example/?page=success",
+            "url": "https://clear-m.github.io/webpush-ios-example/?page=success",
             "message_id": "your_internal_unique_message_id_for_tracking"
         },
     };
